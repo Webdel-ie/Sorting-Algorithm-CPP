@@ -1,31 +1,41 @@
 #include<iostream>
 using namespace std;
 
-void insertionSort(int arr[], int n){                  //Time Complexity : O(n*n)
-    for(int i = 1; i < n; i++){
-        int curr = arr[i];
-        int prev = i - 1;
+// Insertion Sort 
 
-        while(prev >= 0 && arr[prev] > curr){
-            arr[prev + 1] = arr[prev];
-            prev--;
+void insertionSort(vector<int> &v, int n){ 
+    for(int i = 1; i < n; i++) {
+        int key = v[i];
+        int j = i - 1;
+        while((j >= 0) && (v[j] > key)){
+            v[j + 1] = v[j];
+            j--;
         }
-        arr[prev + 1] = curr;
+        v[j + 1] = key;
     }
+    return v;
 }
 
-void printArray(int arr[], int n){
+int main(){
+    int n;
+    cout << 'enter the size of the array: ' << endl;
+    cin >> n;
+
+    vector<int> v(n);
+    cout << 'enter elements of the array: '<< endl;
+    
     for(int i = 0; i < n; i++){
-        cout << arr[i] << " ";
+        cin >> v[i];
     }
     cout << endl;
-}
-int main(){
-    int n = 5;
-    int arr[5] = {6, 1, 5, 2, 3};
 
-    insertionSort(arr, n);
-    printArray(arr, n);
+    cout << 'after sorting array using insertion sort: ';
+    
+    for(auto x : insertionSort(v, n)){
+        cout << x << " ";
+    }
+    
+    cout << endl;
 
     return 0;
 }
