@@ -3,7 +3,9 @@
 This repository contains implementations of:
 - Bubble Sort (Optimized)
 - Selection Sort
-
+- Heap Sort
+- Counting Sort
+  
 ## Language
 C++
 
