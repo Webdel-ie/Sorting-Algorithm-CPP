@@ -3,6 +3,7 @@
 This repository contains implementations of:
 - Bubble Sort (Optimized)
 - Selection Sort
+- Insertion Sort
 - Heap Sort
 - Counting Sort
   
